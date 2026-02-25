@@ -1,0 +1,8 @@
+{
+  "name": "Opus Dijital - Final Master Build",
+  "description": "A high-performance, sales-driven digital agency website with deep content hierarchy and a futuristic neon aesthetic.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
