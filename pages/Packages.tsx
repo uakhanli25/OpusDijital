@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, Zap, Info, Tag } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Packages: React.FC = () => {
   const packages = [
@@ -64,6 +65,10 @@ const Packages: React.FC = () => {
 
   return (
     <div className="animate-fade-in pb-24">
+      <SEO 
+        title="Paketlerimiz" 
+        description="İşletmeniz için hazır dijital büyüme paketleri. Web sitesi, SEO, sosyal medya ve reklam yönetimini tek noktadan profesyonel şekilde yönetin." 
+      />
       {/* 1. SAYFA ÜSTÜ BAŞLIK */}
       <section className="max-w-7xl mx-auto px-6 pt-12 mb-20 text-center reveal">
         <h1 className="text-4xl md:text-7xl font-logo text-gradient uppercase tracking-tighter mb-8 leading-tight">

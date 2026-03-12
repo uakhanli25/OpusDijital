@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Instagram, MessageCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -19,6 +20,10 @@ const Contact: React.FC = () => {
 
   return (
     <div className="animate-fade-in max-w-7xl mx-auto px-6 py-24">
+      <SEO 
+        title="İletişim" 
+        description="Opus Dijital ile iletişime geçin. Projenizi hayata geçirmek için uzman ekibimizle görüşün." 
+      />
       {/* Hero Header */}
       <h1 className="text-4xl md:text-7xl font-logo mb-20 text-gradient reveal uppercase tracking-[0.25em]">İLETİŞİM</h1>
       

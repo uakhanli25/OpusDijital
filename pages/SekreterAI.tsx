@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Bot, Zap, ArrowRight, PhoneIncoming, MessageSquare, CalendarCheck, ShieldCheck, PlayCircle } from 'lucide-react';
 import { SECTOR_CARDS } from '../constants';
 import Modal from '../components/Modal';
+import SEO from '../components/SEO';
 
 const SekreterAI: React.FC = () => {
   const [activeCard, setActiveCard] = useState<any | null>(null);
@@ -45,6 +46,10 @@ const SekreterAI: React.FC = () => {
 
   return (
     <div className="animate-fade-in max-w-7xl mx-auto px-6 py-24">
+      <SEO 
+        title="SekreterAI" 
+        description="İşletmenizin 7/24 çalışan, yorulmayan ve hata yapmayan yapay zeka asistanı SekreterAI ile tanışın." 
+      />
       {/* Hero Header */}
       <div className="flex items-center space-x-6 mb-10 reveal">
         <Bot className="w-10 h-10 text-[#4285F4] drop-shadow-[0_0_10px_rgba(66,133,244,0.5)]" />

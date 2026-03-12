@@ -2,10 +2,15 @@
 import React from 'react';
 import { BarChart3, Zap, ShieldCheck } from 'lucide-react';
 import { HAKKIMIZDA_TEXT } from '../constants';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   return (
     <div className="animate-fade-in max-w-7xl mx-auto px-6 py-24">
+      <SEO 
+        title="Hakkımızda" 
+        description="2021 yılından bu yana, dijital dünyada kaybolan markalara pusula oluyoruz. Opus Dijital hakkında daha fazla bilgi edinin." 
+      />
       <h1 className="text-4xl md:text-7xl font-logo mb-16 text-gradient reveal uppercase tracking-[0.2em] leading-tight text-center md:text-left">HAKKIMIZDA</h1>
       
       <div className="grid md:grid-cols-2 gap-20 mb-32">

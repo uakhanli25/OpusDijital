@@ -3,12 +3,17 @@ import React, { useState } from 'react';
 import { SERVICES } from '../constants';
 import { Service } from '../types';
 import Modal from '../components/Modal';
+import SEO from '../components/SEO';
 
 const Services: React.FC = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   return (
     <div className="animate-fade-in max-w-7xl mx-auto px-6 py-24">
+      <SEO 
+        title="Hizmetlerimiz" 
+        description="İşletmenizi dijitalde bir dev haline getirecek 360 derece çözümler. Web tasarım, yazılım, SEO ve daha fazlası." 
+      />
       <h1 className="text-4xl md:text-7xl font-logo mb-16 text-gradient reveal uppercase tracking-[0.25em]">HİZMETLERİMİZ</h1>
       <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mb-24 leading-relaxed reveal font-medium">
         İşletmenizi dijitalde bir dev haline getirecek 360 derece çözümler. 

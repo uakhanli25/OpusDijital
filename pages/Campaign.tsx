@@ -2,10 +2,15 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Campaign: React.FC = () => {
   return (
     <div className="animate-fade-in max-w-7xl mx-auto px-6 py-24">
+      <SEO 
+        title="Kampanyalar" 
+        description="Opus Dijital'in size özel sunduğu web tasarım ve yazılım kampanyalarını keşfedin." 
+      />
       <h1 className="text-4xl md:text-7xl font-logo mb-20 text-gradient text-center reveal uppercase tracking-[0.2em] leading-tight">ÖZEL KAMPANYA</h1>
       
       <div className="max-w-4xl mx-auto reveal">

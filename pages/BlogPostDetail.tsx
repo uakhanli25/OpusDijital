@@ -3,6 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { BLOG_POSTS } from '../constants';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const BlogPostDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -11,6 +12,7 @@ const BlogPostDetail: React.FC = () => {
   if (!post) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center">
+        <SEO title="Yazı Bulunamadı" />
         <h2 className="text-3xl font-logo text-gradient mb-8 uppercase tracking-widest">YAZI BULUNAMADI</h2>
         <Link to="/blog" className="px-8 py-4 glass rounded-full font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-colors">
           BLOGA GERİ DÖN
@@ -21,6 +23,10 @@ const BlogPostDetail: React.FC = () => {
 
   return (
     <div className="animate-fade-in pb-24">
+      <SEO 
+        title={post.title} 
+        description={post.excerpt} 
+      />
       {/* Hero Header */}
       <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
         <img 

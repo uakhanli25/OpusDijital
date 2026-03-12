@@ -17,17 +17,26 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3000); // 3 saniye sürsün
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = 'unset';
+    };
+  }, [loading]);
 
   return (
     <Router>
       {loading && <MatrixPreloader duration={3000} />}
-      <div className={loading ? 'hidden' : 'block'}>
+      <div className="relative">
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

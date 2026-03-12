@@ -3,10 +3,15 @@ import React from 'react';
 import { BLOG_POSTS } from '../constants';
 import { Link } from 'react-router-dom';
 import { Calendar, ArrowRight, Tag } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Blog: React.FC = () => {
   return (
     <div className="animate-fade-in max-w-7xl mx-auto px-6 py-24">
+      <SEO 
+        title="Blog" 
+        description="Dijital dünyanın en güncel trendlerini, SEO sırlarını ve yapay zeka stratejilerini uzman ekibimizden öğrenin." 
+      />
       {/* Hero Section */}
       <div className="text-center md:text-left mb-24">
         <div className="inline-flex items-center space-x-3 mb-8 p-1 px-4 glass rounded-full border border-white/5 reveal">

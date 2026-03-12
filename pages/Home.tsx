@@ -3,12 +3,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Plus, Minus, ArrowRight, Zap } from 'lucide-react';
 import { FAQ_ITEMS, HAKKIMIZDA_TEXT } from '../constants';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <div className="animate-fade-in">
+      <SEO 
+        title="Ana Sayfa" 
+        description="Opus Dijital, işletmenizi geleceğe taşıyan profesyonel web tasarım, yazılım geliştirme, SEO ve dijital pazarlama çözümleri sunan yeni nesil bir dijital ajanstır." 
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#4F46E5]/10 rounded-full blur-[150px] -z-10" />
