@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -27,7 +27,7 @@ const App: React.FC = () => {
   return (
     <Router>
       {loading && <MatrixPreloader duration={3000} />}
-      <div className="relative">
+      <div className={loading ? 'hidden' : 'block'}>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
