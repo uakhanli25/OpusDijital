@@ -13,7 +13,7 @@ const Blog: React.FC = () => {
         description="Dijital dünyanın en güncel trendlerini, SEO sırlarını ve yapay zeka stratejilerini uzman ekibimizden öğrenin." 
       />
       {/* Hero Section */}
-      <div className="text-center md:text-left mb-24">
+      <section className="text-center md:text-left mb-24">
         <div className="inline-flex items-center space-x-3 mb-8 p-1 px-4 glass rounded-full border border-white/5 reveal">
            <Tag size={14} className="text-[#34A853]" />
            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Bilgi Hazinesi & Stratejiler</span>
@@ -25,10 +25,10 @@ const Blog: React.FC = () => {
           Dijital dünyanın en güncel trendlerini, SEO sırlarını ve yapay zeka stratejilerini uzman ekibimizden öğrenin. 
           <span className="text-gradient font-black"> 2026'nın dijital kurallarını biz yazıyoruz.</span>
         </p>
-      </div>
+      </section>
 
       {/* Blog Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         {BLOG_POSTS.map((post, index) => (
           <article key={post.id} className="reveal group">
             <Link to={`/blog/${post.id}`} className="block h-full">
@@ -40,6 +40,7 @@ const Blog: React.FC = () => {
                       src={post.image} 
                       alt={`Opus Dijital Blog: ${post.title}`} 
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                      loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
                       <span className="px-4 py-1.5 bg-[#4285F4]/90 backdrop-blur-md rounded-full text-[9px] font-black uppercase tracking-widest text-white border border-white/10">
@@ -55,9 +56,9 @@ const Blog: React.FC = () => {
                       <span className="text-[10px] font-black uppercase tracking-[0.2em]">2026 BASKISI</span>
                     </div>
                     
-                    <h3 className="text-xl font-logo text-white group-hover:text-gradient transition-colors duration-300 uppercase tracking-tight leading-tight mb-6 line-clamp-2">
+                    <h2 className="text-xl font-logo text-white group-hover:text-gradient transition-colors duration-300 uppercase tracking-tight leading-tight mb-6 line-clamp-2">
                       {post.title}
-                    </h3>
+                    </h2>
                     
                     <p className="text-gray-400 text-sm leading-relaxed font-medium mb-8 line-clamp-3 flex-grow">
                       {post.excerpt}
@@ -73,10 +74,10 @@ const Blog: React.FC = () => {
             </Link>
           </article>
         ))}
-      </div>
+      </section>
 
       {/* Bottom Newsletter or CTA Snippet */}
-      <div className="mt-40 reveal text-center">
+      <section className="mt-40 reveal text-center">
         <div className="glass p-12 md:p-20 rounded-[4rem] border border-white/5 relative overflow-hidden">
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#34A853]/10 rounded-full blur-[80px]" />
           <h2 className="text-2xl md:text-4xl font-logo text-gradient uppercase mb-8 tracking-widest leading-tight">İÇERİKLERİMİZDEN <br /> HABERDAR OLUN</h2>
@@ -92,7 +93,7 @@ const Blog: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

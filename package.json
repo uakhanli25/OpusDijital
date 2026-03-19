@@ -1,4 +1,3 @@
-
 {
   "name": "opus-dijital",
   "private": true,
@@ -12,11 +11,12 @@
     "clean": "rm -rf dist node_modules package-lock.json"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.469.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.1.3",
-    "lucide-react": "^0.469.0",
-    "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {

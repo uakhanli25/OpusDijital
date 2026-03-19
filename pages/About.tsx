@@ -3,6 +3,7 @@ import React from 'react';
 import { BarChart3, Zap, ShieldCheck } from 'lucide-react';
 import { HAKKIMIZDA_TEXT } from '../constants';
 import SEO from '../components/SEO';
+import RecentBlogs from '../components/RecentBlogs';
 
 const About: React.FC = () => {
   return (
@@ -11,35 +12,38 @@ const About: React.FC = () => {
         title="Hakkımızda" 
         description="2021 yılından bu yana, dijital dünyada kaybolan markalara pusula oluyoruz. Opus Dijital hakkında daha fazla bilgi edinin." 
       />
-      <h1 className="text-4xl md:text-7xl font-logo mb-16 text-gradient reveal uppercase tracking-[0.2em] leading-tight text-center md:text-left">HAKKIMIZDA</h1>
-      
-      <div className="grid md:grid-cols-2 gap-20 mb-32">
-        <div className="space-y-10 reveal">
-          <p className="text-lg md:text-2xl text-gray-200 leading-relaxed font-bold italic border-l-4 border-[#FBBC05] pl-8">
-            "2021 yılından bu yana, dijital dünyada kaybolan markalara pusula oluyoruz."
-          </p>
-          <div className="text-gray-400 space-y-8 leading-relaxed text-base md:text-lg font-medium">
-            <p>
-              {HAKKIMIZDA_TEXT}
+      <section>
+        <h1 className="text-4xl md:text-7xl font-logo mb-16 text-gradient reveal uppercase tracking-[0.2em] leading-tight text-center md:text-left">HAKKIMIZDA</h1>
+        
+        <div className="grid md:grid-cols-2 gap-20 mb-32">
+          <div className="space-y-10 reveal">
+            <p className="text-lg md:text-2xl text-gray-200 leading-relaxed font-bold italic border-l-4 border-[#FBBC05] pl-8">
+              "2021 yılından bu yana, dijital dünyada kaybolan markalara pusula oluyoruz."
             </p>
-            <p>
-              Teknolojinin sunduğu imkanları karmaşa yaratmak için değil, somut ticari başarılar elde etmek için kullanıyoruz. 
-              Opus Dijital bünyesinde barınan her proje, veriye dayalı stratejilerle ve tutkuyla şekillenir.
-            </p>
+            <div className="text-gray-400 space-y-8 leading-relaxed text-base md:text-lg font-medium">
+              <p>
+                {HAKKIMIZDA_TEXT}
+              </p>
+              <p>
+                Teknolojinin sunduğu imkanları karmaşa yaratmak için değil, somut ticari başarılar elde etmek için kullanıyoruz. 
+                Opus Dijital bünyesinde barınan her proje, veriye dayalı stratejilerle ve tutkuyla şekillenir.
+              </p>
+            </div>
+          </div>
+          <div className="relative reveal">
+            <div className="rotating-border-container rounded-[3rem] p-1">
+              <img 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" 
+                className="rounded-[2.9rem] grayscale hover:grayscale-0 transition-all duration-1000" 
+                alt="Opus Dijital Vizyon ve Strateji Toplantısı" 
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
-        <div className="relative reveal">
-          <div className="rotating-border-container rounded-[3rem] p-1">
-            <img 
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop" 
-              className="rounded-[2.9rem] grayscale hover:grayscale-0 transition-all duration-1000" 
-              alt="Opus Dijital Vizyon ve Strateji Toplantısı" 
-            />
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32 reveal">
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32 reveal">
         {[
           { label: 'Proje Tamamlandı', value: '150+' },
           { label: 'Sektör Tecrübesi', value: '5 Yıl' },
@@ -53,6 +57,10 @@ const About: React.FC = () => {
             </div>
           </div>
         ))}
+      </section>
+
+      <div className="mt-32">
+        <RecentBlogs />
       </div>
     </div>
   );

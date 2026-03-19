@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { MEGA_BLOG_POST_CONTENT } from './data/megaBlogPost';
 import { 
   Globe, Search, BarChart3, Palette, ShoppingCart, Share2, 
   Zap, Bot, Scale, Stethoscope, Utensils, Hotel, Wrench, Warehouse 
@@ -10,37 +11,48 @@ export const HAKKIMIZDA_TEXT = "2021 yılından bu yana, dijital dünyada kaybol
 
 export const SERVICES: Service[] = [
   {
+    id: 'ai',
+    title: 'Yapay Zeka ve Otonom Sistemler',
+    description: 'İşletmeler için yapay zeka çözümleriyle operasyonel yükünüzü sıfırlayın. 7/24 otonom çalışan asistan sistemleri ile tanışın.',
+    icon: <Bot />,
+    details: `Solution: "Müşteri hizmetlerinde yapay zeka otomasyonu nasıl kurulur?" sorusunun yanıtını SekreterAI ile veriyoruz. Geliştirdiğimiz yapay zeka müşteri asistanı ve otonom sekreter yazılımı, işletmenizin tüm çağrılarını ve mesajlarını insan doğallığında karşılar. Yapay zeka ile randevu yönetimi sayesinde takviminizi otomatik olarak planlar ve müşteri taleplerini anında çözer.
+
+    Benefit: 7/24 otonom çalışan asistan sistemleri sayesinde mesai saatleri kavramı ortadan kalkar. Müşterileriniz gece yarısı bile anında yanıt alır. İşletmeler için yapay zeka entegrasyonu, personel maliyetlerinizi %80 oranında düşürürken, müşteri memnuniyetini zirveye taşır. Kaçan çağrılar ve kaybedilen müşteriler tarih olur.
+
+    Result: İşletmeniz, hata payı sıfır olan ve asla yorulmayan bir otonom sekreter yazılımı ile çalışır. Operasyonel yükünüz tamamen ortadan kalkar, siz sadece işinizi büyütmeye ve stratejik kararlar almaya odaklanırsınız.`
+  },
+  {
     id: 'web',
     title: 'Web Tasarım & Yazılım',
-    description: 'Sadece bir site değil, 7/24 çalışan bir satış makinesi inşa ediyoruz.',
+    description: 'Kurumsal web tasarım ajansı olarak, sadece bir site değil, 7/24 çalışan dönüşüm odaklı web sitesi inşa ediyoruz.',
     icon: <Globe />,
-    details: `Solution: İşletmenizin dijital dünyadaki yüzünü, sadece görsel bir vitrin olmaktan çıkarıp aktif bir satış kanalına dönüştürüyoruz. Next.js ve modern web teknolojileriyle ışık hızında açılan, mobil uyumlu ve Google dostu mimariler inşa ediyoruz. Her satır kodda dönüşüm oranlarını artıracak psikolojik tetikleyiciler kullanıyoruz.
+    details: `Solution: İşletmenizin dijital dünyadaki yüzünü, sadece görsel bir vitrin olmaktan çıkarıp aktif bir satış kanalına dönüştürüyoruz. Next.js ve modern web altyapıları ile ışık hızında açılan, mobil uyumlu site tasarımı ve Google dostu mimariler inşa ediyoruz. Her satır kodda dönüşüm oranlarını artıracak psikolojik tetikleyiciler kullanıyoruz.
 
-    Benefit: Ziyaretçileriniz sitenizde kaybolmaz; en kısa yoldan ürününüze veya hizmetinize ulaşır. Hızlı yüklenme süreleri sayesinde "hemen çıkma" oranlarınız düşer ve dönüşüm oranlarınız %150'ye varan artış gösterir. Siteniz her cihazda kusursuz görünür ve güven verir. Google Core Web Vitals skorlarınız daima yeşil bölgede kalarak SEO performansınızı destekler.
+    Benefit: Ziyaretçileriniz sitenizde kaybolmaz; en kısa yoldan ürününüze veya hizmetinize ulaşır. "UI/UX odaklı web tasarımı markaya ne katar?" sorusunun cevabını, düşen "hemen çıkma" oranlarınız ve %150'ye varan dönüşüm artışıyla yaşayarak görürsünüz. Hızlı açılan web sitesi yaptırmanın avantajları sayesinde Google Core Web Vitals skorlarınız daima yeşil bölgede kalarak SEO performansınızı destekler.
 
     Result: Teslim ettiğimiz her proje, markanızın prestijini artırırken aynı zamanda 7/24 çalışan bir satış personeli gibi görev yapar. Karmaşık kod yapısını ve sunucu yönetimini biz üstleniriz, siz sadece artan trafiğinizi ve satışlarınızı izlersiniz. İşletmenizin büyümesi artık bir tesadüf değil, teknik bir sonuçtur.`
   },
   {
     id: 'seo',
     title: 'SEO (Arama Motoru Optimizasyonu)',
-    description: 'Google zirvesinde yerinizi ayırtın, organik trafiği kazanca dönüştürün.',
+    description: 'Kurumsal SEO danışmanlığı ile Google zirvesinde yerinizi ayırtın, organik trafik artırma hedeflerinize ulaşın.',
     icon: <Search />,
-    details: `Solution: "Görünmezlik" sorununu, Google'ın 2026 algoritmalarına tam uyumlu teknik SEO, semantik içerik üretimi ve otorite inşası stratejileriyle çözüyoruz. Sadece anahtar kelime değil, kullanıcı niyetini (User Intent) hedefleyen, yapay zeka destekli içerik kümeleri oluşturuyoruz.
+    details: `Solution: "Görünmezlik" sorununu, 2026 arama motoru optimizasyonu trendleri ile tam uyumlu teknik SEO, semantik içerik üretimi ve otorite inşası stratejileriyle çözüyoruz. Sadece anahtar kelime değil, kullanıcı niyetini (User Intent) hedefleyen, yapay zeka destekli içerik kümeleri oluşturuyoruz. E-ticaret SEO hizmeti ile ürünlerinizi doğrudan alıcılarla buluşturuyoruz.
 
-    Benefit: Reklam bütçesi harcamadan, Google arama sonuçlarında organik olarak üst sıralara tırmanırsınız. Sizi arayan potansiyel müşteriler, rakipleriniz yerine sizinle karşılaşır ve markanızı sektörün lideri olarak algılar. Uzun vadede en düşük maliyetli ve en yüksek getirili müşteri kazanım kanalı SEO'dur.
+    Benefit: Reklam bütçesi harcamadan, Google arama sonuçlarında organik olarak üst sıralara tırmanırsınız. Sizi arayan potansiyel müşteriler, rakipleriniz yerine sizinle karşılaşır. Özellikle yerel SEO çalışmaları ile müşteri bulma konusunda rakiplerinize fark atarsınız. Uzun vadede en düşük maliyetli ve en yüksek getirili müşteri kazanım kanalı SEO'dur.
 
     Result: Çalışmalarımız sonucunda organik trafikte %300'e varan sürdürülebilir artış elde ediyoruz. Bir kez zirveye ulaştığınızda, reklam vermeyi bıraksanız dahi müşteri akışınız kesilmez. Markanız bölgenizde veya sektörünüzde otorite olarak tescillenmiş olur, rekabet üstünlüğü kazanırsınız.`
   },
   {
     id: 'ads',
     title: 'Dijital Reklam Yönetimi',
-    description: 'Reklam bütçenizi gider değil, yüksek ROI getiren bir yatırıma dönüştürün.',
+    description: 'Google Ads performans pazarlaması ve sosyal medya reklam yönetimi ile bütçenizi yüksek ROI getiren bir yatırıma dönüştürün.',
     icon: <BarChart3 />,
-    details: `Solution: Meta ve Google Ads bütçenizi bir gider kalemi olarak değil, ölçülebilir bir yatırım aracı olarak yönetiyoruz. Yapay zeka destekli hedefleme ve dinamik reklam kurgularıyla sadece satın almaya en yakın kitleye odaklanıyoruz. Kreatiflerinizi sürekli A/B testlerine tabi tutarak en iyisini buluyoruz.
+    details: `Solution: Veri odaklı dijital pazarlama stratejileri ile Meta ve Google Ads bütçenizi bir gider kalemi olarak değil, ölçülebilir bir yatırım aracı olarak yönetiyoruz. Yapay zeka destekli hedefleme ve dinamik reklam kurgularıyla sadece satın almaya en yakın kitleye odaklanıyoruz. Kreatiflerinizi sürekli A/B testlerine tabi tutarak en iyisini buluyoruz.
 
-    Benefit: Bütçenizin tek bir kuruşu boşa gitmez. Kimin, ne zaman ve hangi reklamla sitenize geldiğini ve ne kadar harcama yaptığını kuruşu kuruşuna bilirsiniz. Düşük maliyetli müşteri kazanımı (CAC) ile karlılığınızı artırırsınız. Yanlış hedefleme kaynaklı bütçe yanmalarını tamamen engelliyoruz.
+    Benefit: Bütçenizin tek bir kuruşu boşa gitmez. Kimin, ne zaman ve hangi reklamla sitenize geldiğini ve ne kadar harcama yaptığını kuruşu kuruşuna bilirsiniz. Sosyal medya reklamlarında hedef kitle seçimi sayesinde düşük maliyetli müşteri kazanımı (CAC) ile karlılığınızı artırırsınız. Yanlış hedefleme kaynaklı bütçe yanmalarını tamamen engelliyoruz.
 
-    Result: ROI (Yatırım Getirisi) odaklı yaklaşımımızla, reklam harcamalarınızın 5 ila 20 katı arasında ciro elde etmenizi sağlıyoruz. Ölçeklenebilir modellerimizle işletmenizi dilediğiniz hızda büyütebilirsiniz. Harcadığınız her kuruş size yeni bir müşteri ve net bir kazanç olarak döner.`
+    Result: ROAS optimizasyonu odaklı yaklaşımımızla, reklam harcamalarınızın 5 ila 20 katı arasında ciro elde etmenizi sağlıyoruz. Ölçeklenebilir modellerimizle işletmenizi dilediğiniz hızda büyütebilirsiniz. Harcadığınız her kuruş size yeni bir müşteri ve net bir kazanç olarak döner.`
   },
   {
     id: 'brand',
@@ -79,20 +91,20 @@ export const SERVICES: Service[] = [
 
 export const FAQ_ITEMS: FAQItem[] = [
   {
-    question: "72 saatlik web sitesi teslimat garantisi nasıl çalışıyor?",
-    answer: "Opus Dijital olarak hızın iş dünyasindeki önemini biliyoruz. 2021 yılından beri geliştirdiğimiz modüler altyapı ve uzman ekibimiz sayesinde, standart kurumsal web sitelerini 72 saat içinde yayına alma garantisi veriyoruz. Süreç şu şekilde işler: İlk 12 saatte içerik ve tasarım taslağı oluşturulur, sonraki 24 saatte geliştirme yapılır, kalan sürede ise testler ve SEO optimizasyonları tamamlanarak yayına geçilir. Müşterilerimizin zaman kaybını önleyerek, dijital varlıklarını en hızlı şekilde satışa hazır hale getiriyoruz. Eğer bu sürede teslimat yapamazsak, domain ve hosting masraflarını biz karşılıyoruz. Bu, işimize olan güvenimizin ve profesyonel disiplinimizin bir göstergesidir."
+    question: "Hızlı açılan web sitesi yaptırmanın avantajları nelerdir ve UI/UX odaklı web tasarımı markaya ne katar?",
+    answer: "Opus Dijital olarak, kurumsal web tasarım ajansı kimliğimizle hızın ve kullanıcı deneyiminin önemini biliyoruz. Hızlı açılan web sitesi yaptırmanın avantajları arasında düşük hemen çıkma oranları ve yüksek SEO performansı yer alır. Peki, UI/UX odaklı web tasarımı markaya ne katar? Ziyaretçilerinizi doğrudan müşteriye dönüştüren dönüşüm odaklı web sitesi deneyimi sunar. Modern web altyapıları kullanarak geliştirdiğimiz mobil uyumlu site tasarımı sayesinde, standart kurumsal web sitelerini 72 saat içinde yayına alma garantisi veriyoruz. Müşterilerimizin zaman kaybını önleyerek, dijital varlıklarını en hızlı şekilde satışa hazır hale getiriyoruz."
   },
   {
-    question: "SEO çalışmalarında başarı garantisi veriyor musunuz?",
-    answer: "Google algoritmaları sürekli değiştiği için kimse 'kesin 1. sıra' sözü veremez, ancak biz somut sonuçlar ve yükseliş garantisi veriyoruz. Bizim metodolojimiz, teknik altyapıdaki tüm hataları sıfırlamak, kullanıcı niyetine odaklı içerikler üretmek ve markanızı bir otorite haline getirmektir. Genellikle 3-6 ay içerisinde hedeflenen anahtar kelimelerde %200'den fazla trafik artışı gözlemliyoruz. Amacımız sadece sıralama değil, bu sıralamanın size satış olarak dönmesidir. Google zirvesindeki yeriniz, bizim başarımızın en büyük kanıtıdır. Şeffaf raporlama sistemimizle her ay nerede olduğunuzu net görürsünüz."
+    question: "Web sitesi Google'da ilk sayfaya nasıl çıkar ve 2026 arama motoru optimizasyonu trendleri nelerdir?",
+    answer: "Kurumsal SEO danışmanlığı hizmetimizle, Google algoritmalarındaki güncel 2026 arama motoru optimizasyonu trendlerini uygulayarak somut yükseliş garantisi veriyoruz. Web sitesi Google'da ilk sayfaya nasıl çıkar? Sorusunun cevabı; teknik SEO, semantik içerik ve otorite inşasından geçer. Hedefimiz sadece sıralama değil, organik trafik artırma ve bu trafiği satışa dönüştürmektir. Özellikle e-ticaret SEO hizmeti ile ürünlerinizi doğrudan alıcılarla buluştururken, yerel SEO çalışmaları ile müşteri bulma konusunda bölgesel işletmelere büyük avantaj sağlıyoruz. 3-6 ay içerisinde hedeflenen anahtar kelimelerde %200'den fazla trafik artışı gözlemliyoruz."
   },
   {
-    question: "SekreterAI nasıl kurulur ve teknik detayları nelerdir?",
-    answer: "SekreterAI kurulumu son derece basittir ve mevcut altyapınıza zarar vermez. Sistem, bulut tabanlı bir santral yönlendirmesiyle çalışır. Sizden sadece cevaplanmasını istediğiniz soruların ve randevu takviminizin detaylarını alırız. Geri kalan tüm NLP (Doğal Dil İşleme) eğitimini ve ses sentezleme ayarlarını ekibimiz tamamlar. Sistemimiz, %98 doğruluk oranıyla karmaşık insan cümlelerini anlayabilir ve bağlam dışına çıkmadan yanıt verebilir. Kurulum süreci genellikle 24-48 saat sürer ve hemen ardından ilk aramalarınızı karşılamaya başlar. KVKK uyumlu veritabanımızda tüm görüşmeler şifrelenmiş olarak saklanır."
+    question: "Müşteri hizmetlerinde yapay zeka otomasyonu nasıl kurulur ve 7/24 otonom çalışan asistan sistemleri nasıl çalışır?",
+    answer: "İşletmeler için yapay zeka çözümlerimiz kapsamında sunduğumuz otonom sekreter yazılımı SekreterAI'ın kurulumu son derece basittir. Müşteri hizmetlerinde yapay zeka otomasyonu nasıl kurulur? Sistem, bulut tabanlı bir santral yönlendirmesiyle çalışır. Sizden sadece cevaplanmasını istediğiniz soruların detaylarını alırız. 7/24 otonom çalışan asistan sistemleri sayesinde, yapay zeka müşteri asistanı tüm çağrıları %98 doğruluk oranıyla karşılar. Ayrıca yapay zeka ile randevu yönetimi entegrasyonumuz sayesinde, asistanımız takviminizi otomatik olarak planlar. Kurulum süreci genellikle 24-48 saat sürer ve KVKK uyumlu veritabanımızda tüm görüşmeler şifrelenmiş olarak saklanır."
   },
   {
-    question: "Reklam bütçemi nasıl en verimli şekilde yönetiyorsunuz?",
-    answer: "Dijital reklamcılıkta en büyük hata, reklamı herkese göstermektir. Biz ise reklamlarınızı sadece 'almaya hazır' kitleye gösteriyoruz. Yapay zeka destekli analiz araçlarımızla, rakip reklamlarını, kullanıcı davranışlarını ve pazar trendlerini inceliyoruz. İlk hafta içinde yaptığımız A/B testleriyle hangi reklam metninin ve görselinin en çok tıklama aldığını saptıyoruz. Ardından, bütçenizi en iyi performans veren kanallara kaydırarak ROI (Yatırım Getirisi) oranınızı maksimize ediyoruz. Ortalama olarak müşterilerimizin reklam maliyetlerini %40 oranında düşürürken, dönüşüm oranlarını %120 oranında artırıyoruz."
+    question: "Dijital reklam bütçesi nasıl yönetilir ve veri odaklı dijital pazarlama stratejileri neden önemlidir?",
+    answer: "Dijital reklam bütçesi nasıl yönetilir? Sorusunun en net cevabı, reklamı herkese değil, sadece 'almaya hazır' kitleye göstermektir. Google Ads performans pazarlaması ve sosyal medya reklam yönetimi süreçlerimizde, veri odaklı dijital pazarlama stratejileri kullanarak bütçenizi en verimli şekilde yönetiyoruz. Özellikle sosyal medya reklamlarında hedef kitle seçimi sayesinde yanlış hedefleme kaynaklı bütçe yanmalarını engelliyoruz. Yapay zeka destekli analiz araçlarımızla A/B testleri yapıyor ve ROAS optimizasyonu (Reklam Harcamalarının Getirisi) odaklı yaklaşımımızla, reklam maliyetlerinizi %40 oranında düşürürken dönüşüm oranlarınızı %120 oranında artırıyoruz."
   },
   {
     question: "Neden diğer ajanslar yerine Opus Dijital'i seçmeliyim?",
@@ -154,6 +166,14 @@ export const SECTOR_CARDS: SectorCard[] = [
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: 'mega-guide-2026',
+    title: '2026 Dijital Dönüşüm Rehberi: Yapay Zeka, SEO, Web Tasarım ve Reklam Stratejileriyle Büyüme',
+    excerpt: 'İşletmenizi geleceğe taşıyacak dört temel taşı inceliyoruz: Yapay Zeka, SEO, Web Tasarım ve Dijital Reklam Yönetimi. Kapsamlı rehberimizle dijital ekosisteminizi inşa edin.',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop',
+    category: 'Dijital Strateji',
+    content: MEGA_BLOG_POST_CONTENT
+  },
   {
     id: '1',
     title: '2026 Yerel SEO Rehberi: Bölgenizde Dijital Liderliğin Sırları',

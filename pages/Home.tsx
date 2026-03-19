@@ -5,6 +5,8 @@ import { ChevronDown, Plus, Minus, ArrowRight, Zap } from 'lucide-react';
 import { FAQ_ITEMS, HAKKIMIZDA_TEXT } from '../constants';
 import SEO from '../components/SEO';
 
+import RecentBlogs from '../components/RecentBlogs';
+
 const Home: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -74,6 +76,7 @@ const Home: React.FC = () => {
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" 
                 alt="Opus Dijital Ajans Ekibi ve Çalışma Alanı" 
                 className="rounded-[1.4rem] grayscale hover:grayscale-0 transition-all duration-700"
+                loading="lazy"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 glass p-8 rounded-2xl border border-white/10 glow-indigo">
@@ -94,6 +97,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Recent Blogs Section */}
+      <RecentBlogs />
+
       {/* FAQ Accordion Section */}
       <section className="py-32 px-6 bg-[#08081a]">
         <div className="max-w-4xl mx-auto">
@@ -105,7 +111,7 @@ const Home: React.FC = () => {
                   className="w-full p-8 flex justify-between items-center text-left hover:bg-white/5 transition-colors"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 >
-                  <span className="text-[11px] font-black uppercase tracking-[0.15em] leading-relaxed text-gray-200">{faq.question}</span>
+                  <h3 className="text-[11px] font-black uppercase tracking-[0.15em] leading-relaxed text-gray-200">{faq.question}</h3>
                   {openFaq === index ? <Minus size={18} className="text-[#FBBC05]" /> : <Plus size={18} className="text-[#4285F4]" />}
                 </button>
                 <div className={`transition-all duration-500 ease-in-out ${openFaq === index ? 'max-h-[800px] opacity-100 p-8 pt-0' : 'max-h-0 opacity-0 overflow-hidden'}`}>

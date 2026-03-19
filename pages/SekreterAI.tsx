@@ -51,47 +51,49 @@ const SekreterAI: React.FC = () => {
         description="İşletmenizin 7/24 çalışan, yorulmayan ve hata yapmayan yapay zeka asistanı SekreterAI ile tanışın." 
       />
       {/* Hero Header */}
-      <div className="flex items-center space-x-6 mb-10 reveal">
-        <Bot className="w-10 h-10 text-[#4285F4] drop-shadow-[0_0_10px_rgba(66,133,244,0.5)]" />
-        <span className="text-[10px] font-black tracking-[0.6em] text-[#34A853] uppercase">YAPAY ZEKA DEVRİMİ</span>
-      </div>
-      <h1 className="text-5xl md:text-8xl font-logo mb-10 text-gradient leading-[0.9] reveal uppercase tracking-tighter">SEKRETERAI</h1>
+      <section>
+        <div className="flex items-center space-x-6 mb-10 reveal">
+          <Bot className="w-10 h-10 text-[#4285F4] drop-shadow-[0_0_10px_rgba(66,133,244,0.5)]" />
+          <span className="text-[10px] font-black tracking-[0.6em] text-[#34A853] uppercase">YAPAY ZEKA DEVRİMİ</span>
+        </div>
+        <h1 className="text-5xl md:text-8xl font-logo mb-10 text-gradient leading-[0.9] reveal uppercase tracking-tighter">SEKRETERAI</h1>
 
-      {/* Hero Description - Reverted to Clean Text (No Frame) */}
-      <div className="max-w-4xl mb-32 reveal">
-          <h2 className="text-3xl md:text-5xl font-logo text-white uppercase tracking-widest mb-10 leading-tight">UYUMAYAN <br className="hidden md:block" /> EKİBİNİZ.</h2>
-          <p className="text-xl md:text-2xl text-gray-400 leading-relaxed font-medium mb-12">
-            İşletmenizin telefonlarına <span className="text-white font-bold">7/24 bakan</span>, asla yorulmayan ve hata yapmayan dijital asistanınızla tanışın. 
-            Maliyetlerinizi %80 düşürürken, operasyonel yükü sıfıra indiriyoruz.
-          </p>
-          <div className="flex flex-wrap gap-x-12 lg:gap-x-16 gap-y-10">
-            <div className="flex items-center space-x-5 min-w-[200px]">
-              <div className="w-1.5 h-12 bg-gradient-primary rounded-full shadow-[0_0_15px_rgba(79,70,229,0.5)]" />
-              <div>
-                <p className="text-base text-gray-200 font-black uppercase tracking-widest">Maliyet Avantajı</p>
-                <p className="text-xs text-gray-500 font-bold uppercase tracking-[0.2em]">%80'e varan tasarruf</p>
+        {/* Hero Description - Reverted to Clean Text (No Frame) */}
+        <div className="max-w-4xl mb-32 reveal">
+            <h2 className="text-3xl md:text-5xl font-logo text-white uppercase tracking-widest mb-10 leading-tight">UYUMAYAN <br className="hidden md:block" /> EKİBİNİZ.</h2>
+            <p className="text-xl md:text-2xl text-gray-400 leading-relaxed font-medium mb-12">
+              İşletmenizin telefonlarına <span className="text-white font-bold">7/24 bakan</span>, asla yorulmayan ve hata yapmayan dijital asistanınızla tanışın. 
+              Maliyetlerinizi %80 düşürürken, operasyonel yükü sıfıra indiriyoruz.
+            </p>
+            <div className="flex flex-wrap gap-x-12 lg:gap-x-16 gap-y-10">
+              <div className="flex items-center space-x-5 min-w-[200px]">
+                <div className="w-1.5 h-12 bg-gradient-primary rounded-full shadow-[0_0_15px_rgba(79,70,229,0.5)]" />
+                <div>
+                  <p className="text-base text-gray-200 font-black uppercase tracking-widest">Maliyet Avantajı</p>
+                  <p className="text-xs text-gray-500 font-bold uppercase tracking-[0.2em]">%80'e varan tasarruf</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-5 min-w-[200px]">
+                {/* Vertical bar turned RED (#EA4335) */}
+                <div className="w-1.5 h-12 bg-[#EA4335] rounded-full shadow-[0_0_15px_rgba(234,67,53,0.5)]" />
+                <div>
+                  <p className="text-base text-gray-200 font-black uppercase tracking-widest">7/24 Teknik Destek</p>
+                  <p className="text-xs text-gray-500 font-bold uppercase tracking-[0.2em]">Kesintisiz altyapı güvencesi</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-5 min-w-[200px]">
+                <div className="w-1.5 h-12 bg-[#FBBC05] rounded-full shadow-[0_0_15px_rgba(251,188,5,0.4)]" />
+                <div>
+                  <p className="text-base text-gray-200 font-black uppercase tracking-widest">Satış Verimliliği</p>
+                  <p className="text-xs text-gray-500 font-bold uppercase tracking-[0.2em]">Dönüşüm oranlarında %150 artış</p>
+                </div>
               </div>
             </div>
-            <div className="flex items-center space-x-5 min-w-[200px]">
-              {/* Vertical bar turned RED (#EA4335) */}
-              <div className="w-1.5 h-12 bg-[#EA4335] rounded-full shadow-[0_0_15px_rgba(234,67,53,0.5)]" />
-              <div>
-                <p className="text-base text-gray-200 font-black uppercase tracking-widest">7/24 Teknik Destek</p>
-                <p className="text-xs text-gray-500 font-bold uppercase tracking-[0.2em]">Kesintisiz altyapı güvencesi</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-5 min-w-[200px]">
-              <div className="w-1.5 h-12 bg-[#FBBC05] rounded-full shadow-[0_0_15px_rgba(251,188,5,0.4)]" />
-              <div>
-                <p className="text-base text-gray-200 font-black uppercase tracking-widest">Satış Verimliliği</p>
-                <p className="text-xs text-gray-500 font-bold uppercase tracking-[0.2em]">Dönüşüm oranlarında %150 artış</p>
-              </div>
-            </div>
-          </div>
-      </div>
+        </div>
+      </section>
       
       {/* Video & Small Side Hero Section */}
-      <div className="grid lg:grid-cols-5 gap-12 items-center mb-40 reveal">
+      <section className="grid lg:grid-cols-5 gap-12 items-center mb-40 reveal">
         {/* Left: Video Player (3/5 width) */}
         <div className="lg:col-span-3">
           <div className="rotating-border-container rounded-[2.5rem] p-0.5 glow-indigo shadow-[0_0_60px_rgba(79,70,229,0.2)]">
@@ -150,10 +152,10 @@ const SekreterAI: React.FC = () => {
              </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Nasıl Çalışır Section */}
-      <div className="mb-40">
+      <section className="mb-40">
         <h2 className="text-3xl font-logo text-white uppercase tracking-widest mb-20 text-center reveal">NASIL ÇALIŞIR?</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
@@ -175,10 +177,10 @@ const SekreterAI: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Sektörel Yayılım Section */}
-      <div className="mb-32">
+      <section className="mb-32">
         <div className="text-center max-w-3xl mx-auto mb-20 reveal">
           <h2 className="text-3xl font-logo text-gradient uppercase tracking-widest mb-8">SEKTÖREL ÇÖZÜMLER</h2>
           <p className="text-gray-400 font-medium">SekreterAI, her sektöre özel eğitilmiş modelleriyle işletmenize tam uyum sağlar.</p>
@@ -209,7 +211,7 @@ const SekreterAI: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Modal for Details */}
       <Modal 

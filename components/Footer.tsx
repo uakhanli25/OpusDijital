@@ -10,10 +10,10 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-16 items-center mb-16">
           {/* Sol Kısım: Bize Ulaşın */}
           <div className="flex flex-col items-center md:items-start space-y-6">
-            <h4 className="font-extrabold uppercase tracking-[0.4em] text-[10px] text-gradient">İLETİŞİM HATTI</h4>
+            <h3 className="font-extrabold uppercase tracking-[0.4em] text-[10px] text-gradient">İLETİŞİM HATTI</h3>
             <div className="text-gray-400 font-data font-medium space-y-3 text-center md:text-left">
-              <p className="hover:text-[#00D4FF] transition-colors tracking-tight text-xl">+90 0530 353 36 76</p>
-              <p className="hover:text-[#00D4FF] transition-colors tracking-tight text-xl">+90 0501 569 95 64</p>
+              <a href="tel:+9005303533676" className="hover:text-[#00D4FF] transition-colors tracking-tight text-xl block">+90 0530 353 36 76</a>
+              <a href="tel:+9005015699564" className="hover:text-[#00D4FF] transition-colors tracking-tight text-xl block">+90 0501 569 95 64</a>
             </div>
           </div>
           
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
 
           {/* Sağ Kısım: Takip Edin */}
           <div className="flex flex-col items-center space-y-6">
-            <h4 className="font-extrabold uppercase tracking-[0.4em] text-[10px] text-gradient">SOSYAL MEDYA</h4>
+            <h3 className="font-extrabold uppercase tracking-[0.4em] text-[10px] text-gradient">SOSYAL MEDYA</h3>
             <div className="flex items-center space-x-6">
               <a href="#" className="p-4 glass rounded-2xl hover:scale-110 transition-transform text-white hover:text-[#4F46E5] border border-white/5">
                 <Facebook size={20} />

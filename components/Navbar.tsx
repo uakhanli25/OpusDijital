@@ -20,6 +20,7 @@ const Navbar: React.FC = () => {
     { name: 'Hizmetler', path: '/hizmetler' },
     { name: 'SekreterAI', path: '/sekreterai' },
     { name: 'Hakkımızda', path: '/hakkimizda' },
+    { name: 'Blog', path: '/blog' },
     { name: 'İletişim', path: '/iletisim' },
   ];
 

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Instagram, MessageCircle } from 'lucide-react';
 import SEO from '../components/SEO';
+import RecentBlogs from '../components/RecentBlogs';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -41,9 +42,9 @@ const Contact: React.FC = () => {
                 <Phone size={24} />
               </div>
               <div className="flex-grow">
-                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] mb-2">TELEFON NUMARALARI</h4>
-                <p className="text-xl font-data font-medium text-white hover:text-[#00D4FF] transition-colors tracking-tight">+90 0530 353 36 76</p>
-                <p className="text-xl font-data font-medium text-white hover:text-[#00D4FF] transition-colors tracking-tight">+90 0501 569 95 64</p>
+                <h3 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] mb-2">TELEFON NUMARALARI</h3>
+                <a href="tel:+9005303533676" className="text-xl font-data font-medium text-white hover:text-[#00D4FF] transition-colors tracking-tight block">+90 0530 353 36 76</a>
+                <a href="tel:+9005015699564" className="text-xl font-data font-medium text-white hover:text-[#00D4FF] transition-colors tracking-tight block">+90 0501 569 95 64</a>
                 
                 {/* WhatsApp Butonu */}
                 <a 
@@ -63,7 +64,7 @@ const Contact: React.FC = () => {
                 <Mail size={24} />
               </div>
               <div>
-                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] mb-2">E-POSTA ADRESİ</h4>
+                <h3 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] mb-2">E-POSTA ADRESİ</h3>
                 <p className="text-xl font-data font-medium text-white hover:text-[#00D4FF] transition-colors tracking-tight">opus.digital25@gmail.com</p>
               </div>
             </div>
@@ -73,7 +74,7 @@ const Contact: React.FC = () => {
                 <Instagram size={24} />
               </div>
               <div>
-                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] mb-2">SOSYAL MEDYA</h4>
+                <h3 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] mb-2">SOSYAL MEDYA</h3>
                 <p className="text-xl font-data font-medium text-white hover:text-[#00D4FF] transition-colors tracking-tight">@opus.dijital</p>
               </div>
             </div>
@@ -83,7 +84,7 @@ const Contact: React.FC = () => {
                 <MapPin size={24} />
               </div>
               <div>
-                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] mb-2">MERKEZ OFİS</h4>
+                <h3 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] mb-2">MERKEZ OFİS</h3>
                 <p className="text-xl font-data font-medium text-white tracking-tight">İzmir, Türkiye</p>
               </div>
             </div>
@@ -94,7 +95,7 @@ const Contact: React.FC = () => {
         <div className="reveal">
           <div className="rotating-border-container rounded-[3rem] p-1 glow-indigo shadow-[0_0_40px_rgba(79,70,229,0.1)]">
             <div className="bg-[#050510] p-8 md:p-12 rounded-[2.9rem] w-full">
-              <h3 className="text-2xl font-logo text-gradient uppercase mb-10 tracking-widest">TEKLİF FORMU</h3>
+              <h2 className="text-2xl font-logo text-gradient uppercase mb-10 tracking-widest">TEKLİF FORMU</h2>
               
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-2">
@@ -157,6 +158,10 @@ const Contact: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="mt-32">
+        <RecentBlogs />
       </div>
     </div>
   );

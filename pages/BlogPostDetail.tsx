@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { BLOG_POSTS } from '../constants';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
 import SEO from '../components/SEO';
+import ReactMarkdown from 'react-markdown';
 
 const BlogPostDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -22,13 +23,13 @@ const BlogPostDetail: React.FC = () => {
   }
 
   return (
-    <div className="animate-fade-in pb-24">
+    <article className="animate-fade-in pb-24">
       <SEO 
         title={post.title} 
         description={post.excerpt} 
       />
       {/* Hero Header */}
-      <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+      <header className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
         <img 
           src={post.image} 
           alt={`Opus Dijital Blog Detay: ${post.title}`} 
@@ -53,20 +54,22 @@ const BlogPostDetail: React.FC = () => {
             </h1>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-6 mt-16">
+      <section className="max-w-4xl mx-auto px-6 mt-16">
         <div className="glass rounded-[3rem] p-8 md:p-16 border border-white/5">
           <p className="text-xl md:text-2xl text-gray-200 leading-relaxed font-bold italic border-l-4 border-[#00D4FF] pl-8 mb-12">
             {post.excerpt}
           </p>
-          <div className="prose prose-invert prose-lg max-w-none text-gray-300 font-medium leading-[2.2] space-y-10 whitespace-pre-line">
-            {post.content}
+          <div className="prose prose-invert prose-lg max-w-none text-gray-300 font-medium leading-[2.2] space-y-10">
+            <div className="markdown-body">
+              <ReactMarkdown>{post.content}</ReactMarkdown>
+            </div>
             
             <div className="mt-16 p-10 glass rounded-[2.5rem] border border-[#4F46E5]/20 relative overflow-hidden group">
               <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#4F46E5]/10 rounded-full blur-[80px] group-hover:bg-[#4F46E5]/20 transition-colors" />
-              <h3 className="text-2xl font-logo text-gradient uppercase mb-6 relative z-10">OPUS DİJİTAL ANALİZİ</h3>
+              <h2 className="text-2xl font-logo text-gradient uppercase mb-6 relative z-10">OPUS DİJİTAL ANALİZİ</h2>
               <p className="text-gray-400 italic relative z-10 text-lg">
                 Dijital dünyada başarılı olmanın anahtarı, sadece trendleri takip etmek değil, onları markanızın DNA'sına entegre etmektir. 
                 Bu makalede bahsettiğimiz stratejiler, 2021'den beri uyguladığımız ve %100 başarı sağladığımız metodolojilerdir. 
@@ -89,8 +92,8 @@ const BlogPostDetail: React.FC = () => {
             </Link>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 
