@@ -630,10 +630,6 @@ function initSmooth(){
   const lenis = new Lenis({lerp:.08, wheelMultiplier:.75}); window.__lenis = lenis;
   (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })(0);
   if (body.classList.contains('open')) lenis.stop();
-  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
-    const id = a.getAttribute('href'), el = id.length > 1 && document.querySelector(id); if (!el) return;
-    e.preventDefault(); lenis.scrollTo(el, {duration:2});
-  }));
 }
 const BOOT_EV = ['pointermove','pointerdown','wheel','touchstart','keydown','scroll'];
 let booted = false;
@@ -647,6 +643,20 @@ BOOT_EV.forEach(ev => addEventListener(ev, boot, {passive:true}));
 addEventListener('load', () => setTimeout(boot, 7000));
 if (SVC.some(x => '#'+x.id === location.hash)) boot();
 fromHash();
+/* bölüm bağlantıları: kaydırır ama adrese # eklemez */
+const isSvc = h => SVC.some(x => '#'+x.id === h);
+const findSec = h => { try { return h.length > 1 && document.querySelector(h); } catch(e){ return null; } };
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]'); if (!a) return;
+  const h = a.getAttribute('href'), el = findSec(h); if (!el || isSvc(h)) return;
+  e.preventDefault();
+  if (window.__lenis) window.__lenis.scrollTo(el, {duration:2}); else el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+});
+if (location.hash && !isSvc(location.hash)){
+  const el = findSec(location.hash);
+  history.replaceState(null, '', location.pathname + location.search);
+  if (el) requestAnimationFrame(() => el.scrollIntoView());
+}
 
 /* listede bir hizmetin üzerine gelince galeri o karta döner */
 document.getElementById('cList').addEventListener('pointerover', e => {
