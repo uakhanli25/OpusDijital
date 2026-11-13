@@ -622,6 +622,9 @@ addEventListener('popstate', fromHash); addEventListener('hashchange', fromHash)
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.2});
 document.querySelectorAll('.rise').forEach(el => io.observe(el));
 
+/* yenilemede sayfa her zaman en baştan açılır */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash) scrollTo(0, 0);
 /* 3D sahne ve yumuşak kaydırma: sayfa önce anında açılır, ağır kısım ziyaretçi etkileşime geçince yüklenir */
 window.__load = {p:0, ready:false};
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
