@@ -1,8 +1,65 @@
 {
-  "rewrites": [
+  "framework": null,
+  "installCommand": "echo skip",
+  "buildCommand": "echo skip",
+  "outputDirectory": "site3d/yayin",
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/hizmetler",
+      "destination": "/#hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/paketlerimiz",
+      "destination": "/#hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/sekreterai",
+      "destination": "/#sekreterai",
+      "permanent": true
+    },
+    {
+      "source": "/e-ticaret",
+      "destination": "/#magaza",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimizda",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/iletisim",
+      "destination": "/#iletisim",
+      "permanent": true
+    },
+    {
+      "source": "/kampanya",
+      "destination": "/#iletisim",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
     }
   ]
 }
