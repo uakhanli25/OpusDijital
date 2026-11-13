@@ -22,7 +22,7 @@ wa = lambda t: f'https://wa.me/{WA_NO}?text=' + quote(t)
 tarih = lambda d: f"{int(d[8:10])} {AYLAR[int(d[5:7])-1]} {d[:4]}"
 plain = lambda s: re.sub(r'<[^>]+>', '', s)
 
-FONT = 'https://fonts.googleapis.com/css2?family=Unbounded:wght@400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400&family=Inter:wght@400;500&display=swap'
+FONT = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&family=Unbounded:wght@400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400&family=Inter:wght@400;500&display=swap'
 
 CSS = """
 :root{--night:#06171B;--panel:#0A2227;--sage:#7A9E8E;--bone:#F3F1EC;--sand:#E6B566;--kiremit:#B5543C;--mute:rgba(243,241,236,.66);--line:rgba(243,241,236,.14);
@@ -51,7 +51,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(6,23,27,.86);backdrop-fi
 .hero::after{content:'';position:absolute;right:-180px;top:-120px;width:560px;height:560px;border-radius:50%;border:1px solid rgba(230,181,102,.22);box-shadow:inset 0 0 0 70px rgba(230,181,102,.025),0 0 0 120px rgba(122,158,142,.03);pointer-events:none}
 .eyebrow{color:var(--sage);margin-bottom:22px}
 h1,h2,h3.t{font-family:var(--head);font-weight:400;text-transform:uppercase;letter-spacing:.035em;word-spacing:.08em}
-h1{font-size:clamp(30px,5.2vw,68px);line-height:1.04;max-width:20ch;position:relative;z-index:1;animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+h1{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:600;text-transform:none;letter-spacing:-.03em;word-spacing:0;font-size:clamp(34px,5.6vw,72px);line-height:1.04;max-width:20ch;position:relative;z-index:1;animation:up .9s cubic-bezier(.2,.8,.2,1) both}
 .lead{font-size:clamp(17px,1.5vw,20px);color:var(--mute);max-width:62ch;margin-top:28px;position:relative;z-index:1}
 .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;position:relative;z-index:1}
 @keyframes up{from{transform:translateY(14px)}to{transform:none}}
