@@ -23,12 +23,11 @@ wa = lambda t: f'https://wa.me/{WA_NO}?text=' + quote(t)
 tarih = lambda d: f"{int(d[8:10])} {AYLAR[int(d[5:7])-1]} {d[:4]}"
 plain = lambda s: re.sub(r'<[^>]+>', '', s)
 
-FONT = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&family=Unbounded:wght@400&family=JetBrains+Mono:wght@400&family=Inter:wght@400;500&display=swap'
+FONT = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&family=JetBrains+Mono:wght@400&family=Inter:wght@400;500&display=swap'
 
 CSS = """
 :root{--night:#06171B;--panel:#0A2227;--sage:#7A9E8E;--bone:#F3F1EC;--sand:#E6B566;--kiremit:#B5543C;--mute:rgba(243,241,236,.66);--line:rgba(243,241,236,.14);
---head:'Unbounded','Unb-fb',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--pad:clamp(18px,4vw,56px)}
-@font-face{font-family:'Unb-fb';src:local('Arial');size-adjust:112%;ascent-override:88%;descent-override:22%}
+--head:'Plus Jakarta Sans',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--pad:clamp(18px,4vw,56px)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--night);scroll-behavior:smooth}
 body{background:radial-gradient(70% 520px at 78% 0,rgba(230,181,102,.10),transparent 70%),radial-gradient(60% 480px at 0 30%,rgba(122,158,142,.08),transparent 70%),var(--night);color:var(--bone);font-family:var(--body);font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
@@ -47,7 +46,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(6,23,27,.86);backdrop-fi
 .hero{position:relative;padding:clamp(56px,9vw,120px) 0 clamp(48px,7vw,96px);overflow:hidden}
 .hero::after{content:'';position:absolute;right:-180px;top:-120px;width:560px;height:560px;border-radius:50%;border:1px solid rgba(230,181,102,.22);box-shadow:inset 0 0 0 70px rgba(230,181,102,.025),0 0 0 120px rgba(122,158,142,.03);pointer-events:none}
 .eyebrow{color:var(--sage);margin-bottom:22px}
-h1,h2,h3.t{font-family:var(--head);font-weight:400;text-transform:uppercase;letter-spacing:.035em;word-spacing:.08em}
+h1,h2,h3.t{font-family:var(--head);font-weight:600;letter-spacing:-.025em}
 h1{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:600;text-transform:none;letter-spacing:-.03em;word-spacing:0;font-size:clamp(34px,5.6vw,72px);line-height:1.04;max-width:20ch;position:relative;z-index:1;animation:up .9s cubic-bezier(.2,.8,.2,1) both}
 .lead{font-size:clamp(17px,1.5vw,20px);color:var(--mute);max-width:62ch;margin-top:28px;position:relative;z-index:1}
 .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;position:relative;z-index:1}
@@ -78,7 +77,7 @@ main section{padding:clamp(36px,5vw,64px) 0;border-top:1px solid var(--line)}
 .band h2{font-size:clamp(26px,4vw,52px);line-height:1.05;max-width:18ch;margin:0 auto}.band p{color:var(--mute);margin:20px auto 0;max-width:52ch}.band .acts{justify-content:center}
 .meta{color:var(--mute);margin-top:22px}
 footer{border-top:1px solid var(--line);padding:44px 0 34px;color:var(--mute);font-size:14px}
-.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}.fgrid h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--sage);margin-bottom:12px;text-transform:uppercase}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}.fgrid h2{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.16em;color:var(--sage);margin-bottom:12px;text-transform:uppercase}
 .fgrid a{display:block;text-decoration:none;padding:3px 0}.fgrid a:hover{color:var(--bone)}
 .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:13px}
 @media (max-width:760px){.links .opt{display:none}.links{gap:12px;font-size:11px;letter-spacing:.1em}.btn.sm{padding:9px 13px;font-size:10.5px}.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:1/-1}.hero::after{width:340px;height:340px;right:-160px;top:-80px}.steps li{padding-left:48px}}
