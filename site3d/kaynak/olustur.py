@@ -8,7 +8,7 @@ from blog import YAZILAR
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(KOK, 'yayin')
-SITE = 'https://opusdijital.com'
+SITE = 'https://www.opusdijital.com'
 TEL, TEL_TXT, WA_NO = '+905303533676', '+90 530 353 36 76', '905303533676'
 BUGUN = '2026-11-13'
 AYLAR = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık']
