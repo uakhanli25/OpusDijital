@@ -1,1 +1,16 @@
-<svg viewBox="-6 -4 112 112" xmlns="http://www.w3.org/2000/svg"><rect x="-6" y="-4" width="112" height="112" rx="26" fill="#06171B"/><g transform="translate(50 48) rotate(-40)"><ellipse rx="50" ry="13" fill="none" stroke="#7A9E8E" stroke-width="5" opacity=".55"/></g><path d="M31 80.9 A38 38 0 1 1 69 80.9 L50 99 Z" fill="none" stroke="#F3F1EC" stroke-width="7" stroke-linejoin="round"/><circle cx="50" cy="48" r="25" fill="none" stroke="#F3F1EC" stroke-width="6"/><path d="M35.9 53.1 A15 15 0 1 1 64.8 45.4" fill="none" stroke="#E6B566" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="48" r="8" fill="#7A9E8E"/><line x1="50" y1="48" x2="64" y2="32" stroke="#7A9E8E" stroke-width="4" stroke-linecap="round"/><circle cx="64" cy="32" r="4.2" fill="#7A9E8E" stroke="#06171B" stroke-width="2"/><g transform="translate(50 48) rotate(-40)"><path d="M-50 0 A50 13 0 0 0 50 0" fill="none" stroke="#06171B" stroke-width="10"/><path d="M-50 0 A50 13 0 0 0 50 0" fill="none" stroke="#7A9E8E" stroke-width="5" stroke-linecap="round"/><circle cx="-30" cy="10.4" r="4.6" fill="#7A9E8E" stroke="#06171B" stroke-width="2"/></g><circle cx="50" cy="9.5" r="5" fill="#F3F1EC" stroke="#06171B" stroke-width="2"/></svg>
+<svg viewBox="-8 -6 116 116" xmlns="http://www.w3.org/2000/svg"><rect x="-8" y="-6" width="116" height="116" rx="28" fill="#06171B"/><defs>
+<linearGradient id="gi" x1="8" y1="6" x2="92" y2="96" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FCE9BC"/><stop offset=".38" stop-color="#E6B566"/><stop offset=".72" stop-color="#A9742F"/><stop offset="1" stop-color="#F0C97F"/></linearGradient>
+<linearGradient id="bi" x1="0" y1="10" x2="0" y2="92" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#F3F1EC"/><stop offset="1" stop-color="#BDB8AC"/></linearGradient>
+<linearGradient id="ni" x1="0" y1="20" x2="0" y2="50" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF1CC"/><stop offset="1" stop-color="#D9A24F"/></linearGradient>
+</defs><g class="lg-o">
+<circle cx="52.4" cy="53" r="43.5" fill="none" stroke="#5E4219" stroke-width="13" opacity=".9"/>
+<circle cx="50" cy="50" r="43.5" fill="none" stroke="url(#gi)" stroke-width="13"/>
+<circle cx="50" cy="50" r="49" fill="none" stroke="#FFF3D6" stroke-width=".8" opacity=".55"/>
+<circle cx="50" cy="50" r="33" fill="none" stroke="#E6B566" stroke-width="1" opacity=".55"/>
+<g stroke="#E6B566" stroke-width="1.6" stroke-linecap="round" opacity=".8"><line x1="50" y1="12.5" x2="50" y2="17.5" transform="rotate(0 50 50)"/><line x1="50" y1="12.5" x2="50" y2="15" transform="rotate(45 50 50)"/><line x1="50" y1="12.5" x2="50" y2="17.5" transform="rotate(90 50 50)"/><line x1="50" y1="12.5" x2="50" y2="15" transform="rotate(135 50 50)"/><line x1="50" y1="12.5" x2="50" y2="17.5" transform="rotate(180 50 50)"/><line x1="50" y1="12.5" x2="50" y2="15" transform="rotate(225 50 50)"/><line x1="50" y1="12.5" x2="50" y2="17.5" transform="rotate(270 50 50)"/><line x1="50" y1="12.5" x2="50" y2="15" transform="rotate(315 50 50)"/></g>
+<g class="lg-needle" transform="rotate(40 50 50)">
+<path d="M50 21 56 50H44Z" fill="url(#ni)"/><path d="M50 21 50 50H44Z" fill="#FFF7E2" opacity=".35"/>
+<path d="M44 50H56L50 79Z" fill="#7A9E8E"/><path d="M50 50H56L50 79Z" fill="#3E5A50"/>
+</g>
+<circle cx="50" cy="50" r="4.6" fill="#06171B" stroke="url(#gi)" stroke-width="2.2"/>
+</g></svg>

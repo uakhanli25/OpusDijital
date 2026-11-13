@@ -5,6 +5,8 @@ from urllib.parse import quote
 sys.path.insert(0, os.path.dirname(__file__))
 from hizmetler import HIZMETLER
 from blog import YAZILAR
+from logo import logo, pusula
+LOGO_CSS = open(os.path.join(os.path.dirname(__file__), 'logo_css.txt'), encoding='utf-8').read()
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(KOK, 'yayin')
@@ -14,7 +16,6 @@ BUGUN = '2026-11-13'
 AYLAR = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık']
 
 ana = open(os.path.join(OUT, 'index.html'), encoding='utf-8').read()
-i = ana.index('<svg viewBox="0 0 100 104" class="mk" aria-hidden="true">'); MARK = ana[i:ana.index('</svg>', i) + 6]
 H = {h['slug']: h for h in HIZMETLER}
 Y = {y['slug']: y for y in YAZILAR}
 esc = lambda s: html.escape(s, quote=True)
@@ -22,7 +23,7 @@ wa = lambda t: f'https://wa.me/{WA_NO}?text=' + quote(t)
 tarih = lambda d: f"{int(d[8:10])} {AYLAR[int(d[5:7])-1]} {d[:4]}"
 plain = lambda s: re.sub(r'<[^>]+>', '', s)
 
-FONT = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&family=Unbounded:wght@400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400&family=Inter:wght@400;500&display=swap'
+FONT = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&family=Unbounded:wght@400&family=JetBrains+Mono:wght@400&family=Inter:wght@400;500&display=swap'
 
 CSS = """
 :root{--night:#06171B;--panel:#0A2227;--sage:#7A9E8E;--bone:#F3F1EC;--sand:#E6B566;--kiremit:#B5543C;--mute:rgba(243,241,236,.66);--line:rgba(243,241,236,.14);
@@ -38,10 +39,6 @@ a{color:inherit}
 .skip{position:absolute;left:-999px;top:8px;background:var(--bone);color:var(--night);padding:8px 14px;border-radius:8px;z-index:99}.skip:focus{left:8px}
 header{position:sticky;top:0;z-index:20;background:rgba(6,23,27,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
-.brand{display:flex;align-items:center;gap:6px;text-decoration:none}
-.mk{width:40px;height:42px;display:block}
-.mk .m-ring{stroke:var(--bone)}.mk .m-ringf{fill:var(--bone)}.mk .m-acc{stroke:var(--sand)}.mk .m-orb{stroke:var(--sage)}.mk .m-orbf{fill:var(--sage)}.mk .m-cut{stroke:var(--night)}.mk .m-cutl{stroke:var(--night);stroke-width:2}
-.wm{display:flex;flex-direction:column;line-height:.8}.wm b{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:30px}.wm small{font-size:8px;letter-spacing:.46em;color:var(--sage);margin-top:4px;padding-left:14px;font-weight:500}
 .links{display:flex;align-items:center;gap:22px}.links a{text-decoration:none;opacity:.82}.links a:hover,.links a[aria-current]{opacity:1;color:var(--sand)}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--kiremit);color:#fff;text-decoration:none;border-radius:999px;padding:16px 26px;font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;transition:transform .3s}
 .btn:hover{transform:scale(1.03)}.btn.sm{padding:11px 18px;font-size:11px}
@@ -84,7 +81,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 34px;color:var(--mute);fo
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}.fgrid h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--sage);margin-bottom:12px;text-transform:uppercase}
 .fgrid a{display:block;text-decoration:none;padding:3px 0}.fgrid a:hover{color:var(--bone)}
 .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:13px}
-@media (max-width:760px){.links .opt{display:none}.links{gap:12px;font-size:11px;letter-spacing:.1em}.btn.sm{padding:9px 13px;font-size:10.5px}.mk{width:34px;height:36px}.wm b{font-size:26px}.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:1/-1}.hero::after{width:340px;height:340px;right:-160px;top:-80px}.steps li{padding-left:48px}}
+@media (max-width:760px){.links .opt{display:none}.links{gap:12px;font-size:11px;letter-spacing:.1em}.btn.sm{padding:9px 13px;font-size:10.5px}.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:1/-1}.hero::after{width:340px;height:340px;right:-160px;top:-80px}.steps li{padding-left:48px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 """
 
@@ -125,19 +122,19 @@ def page(path, title, desc, body, ld, cur='', og_type='website', robots=None):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="{FONT}" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="{FONT}"></noscript>
-<style>{re.sub(r'\s*\n\s*', '', CSS)}</style>
+<style>{re.sub(r'\s*\n\s*', '', CSS)}{LOGO_CSS}</style>
 <script type="application/ld+json">{ldj}</script>
 </head>
 <body>
 <a class="skip" href="#icerik">İçeriğe geç</a>
-<header><div class="wrap bar"><a class="brand" href="/" aria-label="Opus Dijital ana sayfa">{MARK}<span class="wm"><b>pus</b><small>DİJİTAL</small></span></a>
+<header><div class="wrap bar"><a class="brand" href="/" aria-label="Opus Dijital ana sayfa">{logo("h")}<small class="wm-s">DİJİTAL</small></a>
 <nav class="links mono" aria-label="Ana menü">{links}<a class="btn sm" href="{wa('Merhaba, bilgi almak istiyorum.')}" rel="noopener">WhatsApp</a></nav></div></header>
 <main id="icerik">
 {body}
 </main>
 <footer><div class="wrap">
 <div class="fgrid">
-<div><a class="brand" href="/" aria-label="Opus Dijital ana sayfa">{MARK}<span class="wm"><b>pus</b><small>DİJİTAL</small></span></a>
+<div><a class="brand" href="/" aria-label="Opus Dijital ana sayfa">{logo("f")}<small class="wm-s">DİJİTAL</small></a>
 <p style="margin-top:14px;max-width:40ch">İzmir'de web tasarım, SEO, reklam, sosyal medya, e-ticaret ve yapay zeka çözümleri sunan dijital ajans.</p>
 <p style="margin-top:12px"><a href="tel:{TEL}">{TEL_TXT}</a><a href="tel:+905015699564">+90 501 569 95 64</a><a href="mailto:opus.digital25@gmail.com">opus.digital25@gmail.com</a><a href="https://instagram.com/opus.dijital" rel="noopener">Instagram · @opus.dijital</a></p></div>
 <div><h2>Hizmetler</h2>{svc_links}</div>
