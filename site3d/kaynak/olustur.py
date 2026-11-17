@@ -5,6 +5,7 @@ from urllib.parse import quote
 sys.path.insert(0, os.path.dirname(__file__))
 from hizmetler import HIZMETLER
 from blog import YAZILAR
+from konumlar import KONUMLAR
 from logo import logo, pusula
 LOGO_CSS = open(os.path.join(os.path.dirname(__file__), 'logo_css.txt'), encoding='utf-8').read()
 
@@ -18,6 +19,7 @@ AYLAR = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','
 ana = open(os.path.join(OUT, 'index.html'), encoding='utf-8').read()
 H = {h['slug']: h for h in HIZMETLER}
 Y = {y['slug']: y for y in YAZILAR}
+K = {k['slug']: k for k in KONUMLAR}
 esc = lambda s: html.escape(s, quote=True)
 wa = lambda t: f'https://wa.me/{WA_NO}?text=' + quote(t)
 tarih = lambda d: f"{int(d[8:10])} {AYLAR[int(d[5:7])-1]} {d[:4]}"
@@ -77,7 +79,7 @@ main section{padding:clamp(36px,5vw,64px) 0;border-top:1px solid var(--line)}
 .band h2{font-size:clamp(26px,4vw,52px);line-height:1.05;max-width:18ch;margin:0 auto}.band p{color:var(--mute);margin:20px auto 0;max-width:52ch}.band .acts{justify-content:center}
 .meta{color:var(--mute);margin-top:22px}
 footer{border-top:1px solid var(--line);padding:44px 0 34px;color:var(--mute);font-size:14px}
-.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}.fgrid h2{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.16em;color:var(--sage);margin-bottom:12px;text-transform:uppercase}
+.fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}.fgrid h2{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.16em;color:var(--sage);margin-bottom:12px;text-transform:uppercase}
 .fgrid a{display:block;text-decoration:none;padding:3px 0}.fgrid a:hover{color:var(--bone)}
 .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:13px}
 @media (max-width:760px){.links .opt{display:none}.links{gap:12px;font-size:11px;letter-spacing:.1em}.btn.sm{padding:9px 13px;font-size:10.5px}.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:1/-1}.hero::after{width:340px;height:340px;right:-160px;top:-80px}.steps li{padding-left:48px}}
@@ -103,6 +105,7 @@ def page(path, title, desc, body, ld, cur='', og_type='website', robots=None):
     links = ''.join(f'<a class="{c}" href="{u}"{" aria-current=\"page\"" if cur == u else ""}>{n}</a>' for u, n, c in nav)
     svc_links = ''.join(f'<a href="/{h["slug"]}">{h["name"]}</a>' for h in HIZMETLER)
     post_links = ''.join(f'<a href="/blog/{y["slug"]}">{y["h1"]}</a>' for y in YAZILAR[:4])
+    loc_links = ''.join(f'<a href="/{k["slug"]}">{k["name"]}</a>' for k in KONUMLAR)
     ldj = json.dumps(ld, ensure_ascii=False).replace('</', '<\\/')
     rob = f'<meta name="robots" content="{robots}">' if robots else ''
     return f"""<!DOCTYPE html>
@@ -138,6 +141,7 @@ def page(path, title, desc, body, ld, cur='', og_type='website', robots=None):
 <p style="margin-top:12px"><a href="tel:{TEL}">{TEL_TXT}</a><a href="tel:+905015699564">+90 501 569 95 64</a><a href="mailto:opus.digital25@gmail.com">opus.digital25@gmail.com</a><a href="https://instagram.com/opus.dijital" rel="noopener">Instagram · @opus.dijital</a></p></div>
 <div><h2>Hizmetler</h2>{svc_links}</div>
 <div><h2>Blog</h2>{post_links}<a href="/blog">Tüm yazılar →</a></div>
+<div><h2>Bölgeler</h2>{loc_links}</div>
 </div>
 <div class="fbot"><span>© 2026 Opus Dijital · İzmir</span><span>Uygar Akhanlı</span></div>
 </div></footer>
@@ -187,6 +191,36 @@ for h in HIZMETLER:
         crumb_ld(cr),
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in h['faq']]}]}
     open(os.path.join(OUT, h['slug'] + '.html'), 'w', encoding='utf-8').write(page(path, h['title'], h['desc'], body, ld, cur=path))
+    urls.append((path, '0.9'))
+
+# ---- konum sayfaları
+for k in KONUMLAR:
+    path = '/' + k['slug']
+    cr = [('Ana sayfa', '/'), (k['name'], path)]
+    rel = ''.join(f'<a class="tile" href="/{o}"><span class="mono">Bölge</span><b>{K[o]["name"]}</b><p>{K[o]["lead"][:120].rsplit(" ",1)[0]}…</p></a>' for o in k['ilceler'])
+    rel += ''.join(f'<a class="tile" href="/{h["slug"]}"><span class="mono">Hizmet</span><b>{H[h["slug"]]["name"]}</b><p>{plain(H[h["slug"]]["desc"])[:110].rsplit(" ",1)[0]}…</p></a>' for h in HIZMETLER[:3])
+    body = f"""<div class="hero"><div class="wrap">{crumb_html(cr)}
+<p class="eyebrow mono">{k['eyebrow']}</p>
+<h1>{k['h1']}</h1>
+<p class="lead">{k['lead']}</p>
+<div class="acts"><a class="btn" href="{wa(k['wa'])}" rel="noopener">WhatsApp'tan bilgi alın →</a><a class="btn ghost" href="tel:{TEL}">Hemen arayın</a></div>
+</div></div>
+<section><div class="wrap content">{blocks(k['blocks'])}</div></section>
+<section><div class="wrap"><h2 class="sec-t">Sık sorulan sorular</h2>{faq_html(k['faq'])}</div></section>
+<section><div class="wrap"><h2 class="sec-t">İlgili sayfalar</h2><div class="grid3">{rel}</div></div></section>
+<section class="band"><div class="wrap"><h2>Önce konuşalım, sonra karar verin.</h2><p>Ne gerektiğini ve ne gerekmediğini açıkça söylüyoruz. Ön görüşme ücretsiz, bağlayıcı değil.</p>
+<div class="acts"><a class="btn" href="{wa(k['wa'])}" rel="noopener">Ücretsiz ön görüşme →</a></div></div></section>"""
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "ProfessionalService", "@id": SITE + path + "#isletme", "name": "Opus Dijital", "description": k['desc'], "url": SITE + path,
+         "telephone": TEL, "priceRange": "₺₺",
+         "address": {"@type": "PostalAddress", "addressLocality": "İzmir", "addressRegion": "İzmir", "addressCountry": "TR"},
+         "areaServed": [{"@type": "City", "name": k['name'].rsplit(' ', 2)[0]}, {"@type": "City", "name": "İzmir"}],
+         "founder": {"@type": "Person", "name": "Uygar Akhanlı"},
+         "sameAs": ["https://instagram.com/opus.dijital"],
+         "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": h['name']}} for h in HIZMETLER]},
+        crumb_ld(cr),
+        {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in k['faq']]}]}
+    open(os.path.join(OUT, k['slug'] + '.html'), 'w', encoding='utf-8').write(page(path, k['title'], k['desc'], body, ld))
     urls.append((path, '0.9'))
 
 # ---- blog yazıları
